@@ -1,4 +1,4 @@
-import main from './index';
+import main from './_Main/index';
 
 class Server {
   

@@ -1,27 +1,13 @@
-const { Stock } = require("./stock.ts")
-const { parseTransactions } = require('./TransactionParse')
+import Istock from "./Interface/stock.interface";
+import Itransaction from "./Interface/transaction.interface";
 
-interface ItransactionArrayObject {
-    type: string;
-    qty: number;
-}
-interface ItransactionObject {
-    status: boolean;
-    data: ItransactionArrayObject[];
-}
+const Stock  = require("../_JSON/stock/stock.json")
+const { parseTransactions } = require('./Transaction/transactionParse.ts')
 
-
-interface Istocks {
-    sku: string;
-    stock: number;
-}
-interface ItransactionParser {
-    [sku: string]: ItransactionObject;
-}
 const main=()=>{
 
-    let stock: Istocks[] = Stock();
-    let transaction: ItransactionParser = parseTransactions();
+    let stock: Istock[] = Stock;
+    let transaction: Itransaction = parseTransactions();
 
     for (let data of stock) {
         if (!transaction[data.sku]) {
