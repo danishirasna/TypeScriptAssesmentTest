@@ -4,6 +4,7 @@ const file = require('../../_JSON/stock/stock.json');
 const stockJsonReWrite = (callback: any, dir: string) => {
 
     let stocks: any = callback();
+    
     if (file) {
         fs.unlinkSync(dir + "/_JSON/stock/stock.json")
     }
