@@ -3,7 +3,7 @@ import main from './_Main/index';
 class Server {
   
     public start(){
-      main();
+      main(__dirname);
     }
 }
 
